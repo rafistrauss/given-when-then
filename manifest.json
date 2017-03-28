@@ -22,7 +22,6 @@
     "default_popup": ""
   },
   "permissions": [
-    "tabs",
     "https://support.rubensteintech.com/*"
   ],
   "content_scripts": [
