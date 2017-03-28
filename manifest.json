@@ -1,0 +1,38 @@
+{
+  "name": "Testing Notes Helper",
+  "version": "0.1.0",
+  "manifest_version": 2,
+  "description": "This extension inserts a Testing Notes header and uppercases the first word of each line",
+  "homepage_url": "http://rafistrauss.com",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "default_locale": "en",
+  "background": {
+    "scripts" : [
+      "src/bg/background.js"
+    ],
+    "persistent": false
+  },
+  "page_action": {
+    "default_icon": "icons/icon19.png",
+    "default_title": "Testing Notes Helper",
+    "default_popup": ""
+  },
+  "permissions": [
+    "tabs",
+    "https://support.rubensteintech.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://support.rubensteintech.com/*"
+      ],
+      "js": [
+        "src/inject/inject.js"
+      ]
+    }
+  ]
+}
