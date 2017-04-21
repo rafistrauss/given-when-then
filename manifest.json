@@ -1,6 +1,6 @@
 {
   "name": "Testing Notes Helper",
-  "version": "0.1.1",
+  "version": "0.1.3",
   "manifest_version": 2,
   "description": "This extension inserts a Testing Notes header and uppercases the first word of each line",
   "homepage_url": "http://rafistrauss.com",
@@ -27,7 +27,7 @@
   "content_scripts": [
     {
       "matches": [
-        "https://support.rubensteintech.com/*"
+        "https://support.rubensteintech.com/Ticket/Update.html*"
       ],
       "js": [
         "src/inject/inject.js"
