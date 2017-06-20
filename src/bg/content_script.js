@@ -6,6 +6,14 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
     }
     /* Content script action */
     addTestingNotesFormat();
+    chrome.storage.sync.get({
+        assignee: '-None-',
+        changeAssignee: false,
+    }, function (items) {
+        if(items.changeAssignee && items.assignee != '-None-') {
+            setOwner(items.assignee);
+        }
+    });
 });
 
 
@@ -17,4 +25,15 @@ function addTestingNotesFormat() {
         newContent = testintNotesHeader + newContent;
     }
     contentWrapper.innerHTML = newContent;
+}
+
+function setOwner(ownerName) {
+    let ownerElement = document.getElementById('Owner');
+    var res = Array.from(ownerElement.options).filter(function (item) {
+        return item.text.indexOf(ownerName) >= 0;
+    });
+
+    if(res.length > 0) {
+        ownerElement.value = res[0].value;
+    }
 }

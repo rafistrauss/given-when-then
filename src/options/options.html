@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>RT Helper Options</title>
+    <style>
+        body: {
+            padding: 10px;
+        }
+
+        .optionSection {
+            padding: 10px 0;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="optionSection">
+    <label>
+        <input type="checkbox" id="changeAssignee">
+        Change ticket assignee on trigger
+    </label>
+</div>
+
+<div class="optionSection">
+    <select id="assignee">
+        <option>-None-</option>
+    </select>
+    Ticket assignee
+    <br />
+    <input type="text" id="newAssignee" placeholder="New Assignee">
+    <button id="newAssigneeButton">Add to list</button>
+    <button id="clearListOfAssignees">Clear List</button>
+</div>
+
+<div class="optionSection">
+    <button id="save">Save</button>
+    <span id="status"></span>
+</div>
+
+<script src="options.js"></script>
+</body>
+</html>
